@@ -12,7 +12,6 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import RandomizedSearchCV
 
-%matplotlib inline
 
 def print_confusion_matrix(y_test, y_pred):
     """ Display the confusion matrix for y_pred when compared with y_test  """
