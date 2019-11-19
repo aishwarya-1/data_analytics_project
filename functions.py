@@ -13,12 +13,12 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import RandomizedSearchCV
 
 
-def print_confusion_matrix(y_train, y_pred):
-    """ Display the confusion matrix for y_pred when compared with y_train  """
+def print_confusion_matrix(y_test, y_pred):
+    """ Display the confusion matrix for y_pred when compared with y_test  """
     
-    cm = confusion_matrix(y_train, y_pred)
+    cm = confusion_matrix(y_test, y_pred)
     df_cm = pd.DataFrame(cm, range(3), range(3))
-    df_cm = pd.DataFrame(cm, columns=np.unique(y_train), index = np.unique(y_train))
+    df_cm = pd.DataFrame(cm, columns=np.unique(y_test), index = np.unique(y_test))
     df_cm.index.name = 'Actual'
     df_cm.columns.name = 'Predicted'
     plt.figure(figsize = (10,7))
