@@ -12,6 +12,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import RandomizedSearchCV
 
+%matplotlib inline
 
 def print_confusion_matrix(y_test, y_pred):
     """ Display the confusion matrix for y_pred when compared with y_test  """
@@ -26,6 +27,7 @@ def print_confusion_matrix(y_test, y_pred):
     ax = sns.heatmap(df_cm, cmap="Blues", annot=True,annot_kws={"size": 16})      # font size
     ax.get_ylim()
     ax.set_ylim(3.0, 0)
+    plt.show()
 
 
 def knn_classifier(X_train,y_train,X_test,y_test = None,n_neighbors = 8):
